@@ -2,6 +2,9 @@ body {
    font-family: 'Courier New';
    background-color: #1e647b;
 }
+a {
+   text-decoration: none;
+}
 /* INDEX.html */
 #title {
    font-family: Impact;
@@ -11,6 +14,16 @@ body {
    margin-top: 3%;
    color: #addceb;
    border-radius: 9px;
+}
+#author{
+   font-size: 14px;
+   color: black;
+}
+#author a {
+   color: #80a1ac;
+}
+#author a:hover {
+   color: #addceb;
 }
 
 #mainMenu {
