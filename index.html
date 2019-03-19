@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Cyber Bird</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body align="center">
+
+  <!--MENU-->
+  <div id="index">
+    <div id="title">Cyber Bird</div>
+    <small>by <a href=""></a></small>
+    <div id="mainMenu">
+      <div id="selectColors">
+        <div id="colorsTitle">SELECT <span>2</span> COLORS FOR YOUR <span id="cb">CYBER BIRD</span></div> <br> <hr> <br>
+        <span id="first"> First: <input type="color" name="color1" id="color1" value="#f1aabc"></span>
+      <span id="second"> Second: <input type="color" name="color2" id="color2" value="#2d96b9"></span>
+      </div>
+      <div class="button" id="startCyber" onclick="displayComp(game)">START</div>
+    </div>
+  </div>
+
+  <!--GAME-->
+  <div id="game">
+    <div id="container" align="center">
+        <div id="scoreBoard">
+          <div id="header">SCOREBOARD</div>
+          <div id="description">Score: </div>
+          <div id="score">0</div>
+        </div>
+
+        <canvas id="myCanvas" height="500" width="900"></canvas>
+        <div class="helper" id="toJump">press <span>SPACE</span> to jump</div>
+        <div class="helper" id="toStart">click <span onclick="startGame()">HERE</span> to start</div>
+        <div class="helper" id="toSelect">select new <span onclick="displayComp(index)">COLORS</span></div>
+    </div>
+    <div id="darken"></div>
+    <div id="gameOver" align="center">
+          <div id="message">GAME OVER</div>
+          <div id="yourScore">Your score is: <span id="finalScore"></span></div>
+          <div id="tryAgain" class="button" onclick="startGame()">Try Again</div>
+    </div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
