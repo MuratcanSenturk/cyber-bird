@@ -1,6 +1,6 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-document.addEventListener("keydown", this.onKeyPress.bind());
+document.addEventListener("keydown", window.onKeyPress.bind());
 
 const cnvHeight = canvas.height;
 const cnvWidth = canvas.width;
@@ -53,7 +53,7 @@ class Bird {
       this.ctx.closePath();
       this.ctx.stroke();
       this.ctx.beginPath();
-      this.ctx.arc(this.x, this.y, this.radius - this.ctx.lineWidth + 1, 0, 2 * Math.PI);
+      this.ctx.arc(this.x, this.y, this.radius - this.ctx.lineWidth, 0, 2 * Math.PI);
       this.ctx.fillStyle = secondColor;
       this.ctx.fill();
    }
@@ -92,7 +92,7 @@ startGame = () => {
 
    this.pipes = this.createPipe();
    this.bird = this.createBird();
-   this.loop = setInterval(this.gameLoop, 12);
+   this.loop = setInterval(this.gameLoop, 1000 / 100);
 }
 
 function displayComp(component) {
@@ -155,9 +155,9 @@ draw = () => {
 }
 
 difficulty = () => {
-   this.gameScore += 2;
+   this.gameScore += 1;
 
-   if(gameScore % 1000 == 0){
+   if(gameScore % 500 == 0){
       this.initialSpace -= 4;
       if(this.pipeFrequency >= 131){
          this.pipeFrequency -= 40;
